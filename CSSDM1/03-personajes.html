@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P1 - Presentación Mes Patrio | Personajes</title>
+<style>
+  :root{
+    --verde:#0e6b4f;
+    --verde-oscuro:#0a5340;
+    --rojo:#c8102e;
+    --dorado:#c7a668;
+    --dorado-claro:#c7a668;
+    --crema:#faf8f3;
+    --texto:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Georgia, 'Times New Roman', serif;
+    color:var(--texto);
+    background-image:url('mexico (1).png');
+    background-size:cover;
+    background-position:center 35%;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .wrap{
+    max-width:1100px;
+    width:100%;
+    margin:0 auto;
+    padding:28px 32px 40px;
+    flex:1;
+  }
+
+  nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:34px;
+    background:rgba(255,255,255,.85);
+    padding:14px 18px;
+    border-radius:18px;
+    box-shadow:0 4px 16px rgba(0,0,0,.15);
+  }
+  nav a{
+    font-family:Georgia, serif;
+    font-size:0.95rem;
+    color:var(--verde-oscuro);
+    background:#fff;
+    border:1.5px solid var(--dorado);
+    border-radius:999px;
+    padding:10px 26px;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease;
+    font-weight:bold;
+    text-decoration:none;
+    display:inline-block;
+  }
+  nav a:hover{
+    background:var(--dorado-claro);
+    color:var(--verde-oscuro);
+  }
+  nav a.active{
+    background:var(--dorado-claro);
+    color:#fff;
+    border-color:var(--dorado-claro);
+  }
+
+  h1, h2 {
+    text-align:center;
+    color:var(--rojo) !important;
+    font-weight:bold;
+    font-size:2.2rem;
+    margin:0 0 26px;
+    text-shadow:0 0 12px #fff, 0 0 24px #fff, 0 2px 4px rgba(0,0,0,.3);
+  }
+
+  h3, h4, strong {
+    color:var(--dorado-claro) !important;
+  }
+
+  p, li {
+    color:#ffffff !important;
+  }
+
+  .card{
+    background:var(--verde);
+    color:#fff;
+    border-radius:22px;
+    padding:34px 40px;
+    line-height:1.65;
+    margin-bottom:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+  }
+
+  .personajes-grid{
+    display:flex;
+    gap:34px;
+    align-items:flex-start;
+  }
+  .personajes-texto{flex:1.4;}
+  .personajes-texto li{margin-bottom:14px;}
+  .avatares{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+    align-content:start;
+  }
+  .avatar{
+    aspect-ratio:1/1;
+    border-radius:50%;
+    background:var(--dorado-claro);
+    color:var(--verde-oscuro);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:1.3rem;
+    border:3px solid #fff;
+  }
+
+  footer{
+    width:100%;
+    background:var(--dorado-claro);
+    text-align:center;
+    padding:26px 20px;
+    font-size:1.05rem;
+    color:#00ffff;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+    margin-top:auto;
+    font-weight:bold;
+  }
+
+  @media (max-width:700px){
+    .personajes-grid{flex-direction:column;}
+    nav{gap:10px;}
+    nav a{padding:8px 16px; font-size:0.85rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a href="01-inicio.html">Inicio</a>
+    <a href="02-fechas.html">Fechas importantes</a>
+    <a href="03-personajes.html" class="active">Personajes</a>
+    <a href="04-mitos-datos.html">Mitos y Datos</a>
+  </nav>
+
+  <section id="slide-3">
+    <h1>Personajes históricos</h1>
+    <div class="card">
+      <div class="personajes-grid">
+        <ul class="personajes-texto">
+          <li><strong>Miguel Hidalgo y Costilla:</strong>Rol principal: Iniciador del movimiento armado y "Padre de la Patria".<br>Aportación clave: Convocó al pueblo la madrugada del 16 de septiembre de 1810 en Dolores, Guanajuato, dando inicio oficial a la lucha por la independencia.<br>Logro relevante: Fue un sacerdote ilustrado que hablaba náhuatl, otomí y purépecha. Promulgó el primer decreto de abolición de la esclavitud en Guadalajara en diciembre de 1810.</li>
+          <li><strong>Ignacio Allende:</strong> Rol principal: Capitán del ejército virreinal y líder táctico inicial del movimiento.<br>Aportación clave: Aportó la estructura militar profesional al ejército insurgente y comandó las batallas iniciales en la Alhóndiga de Granaditas y el Monte de las Cruces.<br>Logro relevante: Asumió la jefatura del movimiento tras las diferencias estratégicas con Hidalgo sobre el avance a la Ciudad de México.</li>
+          <li><strong>Josefa Ortiz de Domínguez:</strong> Rol principal: Estratega y pieza clave en la Conspiración de Querétaro.<br>Aportación clave: Al ser descubierta la conspiración por las autoridades virreinales en septiembre de 1810, logró avisar a tiempo a Ignacio Allende y Miguel Hidalgo para iniciar la lucha antes de ser arrestados.<br>Logro relevante: Arriesgó su posición social y libertad por la causa insurgente, sufriendo años de reclusión en conventos sin retractarse jamás de sus ideales.</li>
+          <li><strong>José María Morelos y Pavón:</strong> Rol principal: Genio militar y pensador político ("Siervo de la Nación").<br>Aportación clave: Organizó formalmente las instituciones del nuevo país y redactó los Sentimientos de la Nación (1813), sentando las bases de la soberanía, la división de poderes y la igualdad social.<br>Logro relevante: Lideró una de las campañas militares más eficaces en el sur de México con un ejército disciplinado, destacando el épico Sitio de Cuautla.</li>
+          <li><strong>Vicente Guerrero:</strong>Rol principal: Capitán del ejército virreinal y líder táctico inicial del movimiento.<br>Aportación clave: Aportó la estructura militar profesional al ejército insurgente y comandó las batallas iniciales en la Alhóndiga de Granaditas y el Monte de las Cruces.<br>Logro relevante: Asumió la jefatura del movimiento tras las diferencias estratégicas con Hidalgo sobre el avance a la Ciudad de México.</li>
+          <li><strong>Agustín de Iturbide:</strong> Militar realista que se alió con Vicente Guerrero para firmar el Plan de Iguala y formar el Ejército Trigarante.</li>
+          <li><strong>Los Niños Héroes:</strong> Los seis cadetes del Colegio Militar (Juan de la Barrera, Juan Escutia, Agustín Melgar, Fernando Montes de Oca, Vicente Suárez y Francisco Márquez).</li>
+        </ul>
+    </div>
+  </section>
+</div>
+
+<footer>Alumno: Daniel Molina Contreras &nbsp;|&nbsp; Grado y grupo: 5J &nbsp;|&nbsp; Especialidad: Programación</footer>
+
+</body>
+</html>
