@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>P1 - Presentación Mes Patrio | Fechas importantes</title>
 <style>
   :root{
+    /* Colores reutilizables en toda la página */
     --verde:#0e6b4f;
     --verde-oscuro:#0a5340;
     --rojo:#c8102e;
@@ -23,10 +23,12 @@
     background-size:cover;
     background-position:center 35%;
     background-attachment:fixed;
+    /* La imagen de fondo no se mueve al hacer scroll */
     background-repeat:no-repeat;
     min-height:100vh;
     display:flex;
     flex-direction:column;
+    /* Permite que el footer quede siempre pegado abajo */
   }
 
   .wrap{
@@ -54,6 +56,7 @@
     background:#fff;
     border:1.5px solid var(--dorado);
     border-radius:999px;
+    /* Un radio muy alto crea la forma de botón ovalado */
     padding:10px 26px;
     cursor:pointer;
     transition:background .2s ease, color .2s ease;
@@ -66,6 +69,7 @@
     color:var(--verde-oscuro);
   }
   nav a.active{
+    /* Marca visualmente en qué página del menú estás */
     background:var(--dorado-claro);
     color:#fff;
     border-color:var(--dorado-claro);
@@ -78,6 +82,7 @@
     font-size:2.2rem;
     margin:0 0 26px;
     text-shadow:0 0 12px #fff, 0 0 24px #fff, 0 2px 4px rgba(0,0,0,.3);
+    /* El "halo" blanco ayuda a leer el texto rojo sobre la imagen de fondo */
   }
 
   h3, h4, strong {
@@ -102,6 +107,7 @@
     display:flex;
     flex-direction:column;
     gap:22px;
+    /* Cada fecha queda en su propia fila, con espacio entre ellas */
   }
   .timeline .item{font-size:1.02rem;}
 
@@ -116,16 +122,12 @@
     margin-top:auto;
     font-weight:bold;
   }
-
-  @media (max-width:700px){
-    nav{gap:10px;}
-    nav a{padding:8px 16px; font-size:0.85rem;}
-  }
 </style>
 </head>
 <body>
 
 <div class="wrap">
+  <!-- Menú de navegación entre las páginas de la presentación -->
   <nav>
     <a href="01-inicio.html">Inicio</a>
     <a href="02-fechas.html" class="active">Fechas importantes</a>
@@ -133,6 +135,7 @@
     <a href="04-mitos-datos.html">Mitos y Datos</a>
   </nav>
 
+  <!-- Línea del tiempo con las fechas clave del Mes Patrio -->
   <section id="slide-2">
     <h1>Fechas importantes (Línea del tiempo)</h1>
     <div class="card timeline">
@@ -149,3 +152,4 @@
 
 </body>
 </html>
+
