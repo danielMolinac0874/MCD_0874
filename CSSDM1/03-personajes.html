@@ -39,11 +39,12 @@
     /* Ocupa al menos el 100% de la altura visible de la pantalla */
     display:flex;
     flex-direction:column;
-    /* Organiza el body en columna, lo que permite que el footer
+    /* Organiza el body en columna, lo que permite que el pie de página
        quede siempre pegado abajo */
   }
 
-  .wrap{
+  .contenedor{
+    /* Envuelve y centra todo el contenido de la página */
     max-width:1100px;
     /* Ancho máximo del contenido para que no se estire demasiado */
     width:100%;
@@ -51,7 +52,7 @@
     /* Centra el contenedor horizontalmente */
     padding:28px 32px 40px;
     flex:1;
-    /* Crece y empuja el footer hacia abajo */
+    /* Crece y empuja el pie de página hacia abajo */
   }
 
   nav{
@@ -62,7 +63,7 @@
     color:var(--verde-oscuro);
     background:#fff;
   }
-  nav a.active{
+  nav a.activo{
     /* Marca en negritas cuál es la página actual */
     font-weight:bold;
   }
@@ -85,26 +86,26 @@
     color:#ffffff !important;
   }
 
-  .card{
-    /* Tarjeta verde que contiene el contenido principal de la sección */
+  .tarjeta{
+    /* El recuadro verde que contiene el contenido principal de la sección */
     background:var(--verde);
     color:#fff;
     padding:34px 40px;
     margin-bottom:20px;
   }
 
-  .personajes-grid{
+  .grupo-personajes{
     display:flex;
     /* Coloca el texto y los avatares uno al lado del otro */
     gap:34px;
     align-items:flex-start;
     /* Alinea ambas columnas desde arriba, no al centro */
   }
-  .personajes-texto{
+  .texto-personajes{
     flex:1.4;
     /* La columna de texto ocupa más espacio que la de avatares (proporción 1.4 a 1) */
   }
-  .personajes-texto li{margin-bottom:14px;}
+  .texto-personajes li{margin-bottom:14px;}
   .avatares{
     flex:1;
     display:grid;
@@ -132,29 +133,29 @@
     background:var(--dorado-claro);
     /* Solo se pide color dorado, sin ningún otro diseño */
     margin-top:auto;
-    /* Junto con el flex del body, empuja el footer al fondo de la pantalla */
+    /* Junto con el flex del body, empuja el pie de página al fondo de la pantalla */
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="contenedor">
   <!-- Menú de navegación: enlaces a las demás páginas de la presentación -->
   <nav>
     <a href="index.html">Inicio</a>
     <a href="02-fechas.html">Fechas importantes</a>
-    <a href="03-personajes.html" class="active">Personajes</a>
-    <!-- class="active" marca esta página como la actual -->
+    <a href="03-personajes.html" class="activo">Personajes</a>
+    <!-- class="activo" marca esta página como la actual -->
     <a href="04-mitos-datos.html">Mitos y Datos</a>
   </nav>
 
   <!-- Sección con la biografía resumida de los personajes históricos -->
-  <section id="slide-3">
+  <section id="seccion-3">
     <h1>Personajes históricos</h1>
-    <div class="card">
+    <div class="tarjeta">
       <!-- Contenedor que divide el contenido en dos columnas: texto y avatares -->
-      <div class="personajes-grid">
-        <ul class="personajes-texto">
+      <div class="grupo-personajes">
+        <ul class="texto-personajes">
           <li><strong>Miguel Hidalgo y Costilla:</strong>Rol principal: Iniciador del movimiento armado y "Padre de la Patria".<br>Aportación clave: Convocó al pueblo la madrugada del 16 de septiembre de 1810 en Dolores, Guanajuato, dando inicio oficial a la lucha por la independencia.<br>Logro relevante: Fue un sacerdote ilustrado que hablaba náhuatl, otomí y purépecha. Promulgó el primer decreto de abolición de la esclavitud en Guadalajara en diciembre de 1810.</li>
           <li><strong>Ignacio Allende:</strong> Rol principal: Capitán del ejército virreinal y líder táctico inicial del movimiento.<br>Aportación clave: Aportó la estructura militar profesional al ejército insurgente y comandó las batallas iniciales en la Alhóndiga de Granaditas y el Monte de las Cruces.<br>Logro relevante: Asumió la jefatura del movimiento tras las diferencias estratégicas con Hidalgo sobre el avance a la Ciudad de México.</li>
           <li><strong>Josefa Ortiz de Domínguez:</strong> Rol principal: Estratega y pieza clave en la Conspiración de Querétaro.<br>Aportación clave: Al ser descubierta la conspiración por las autoridades virreinales en septiembre de 1810, logró avisar a tiempo a Ignacio Allende y Miguel Hidalgo para iniciar la lucha antes de ser arrestados.<br>Logro relevante: Arriesgó su posición social y libertad por la causa insurgente, sufriendo años de reclusión en conventos sin retractarse jamás de sus ideales.</li>
