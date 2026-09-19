@@ -27,10 +27,11 @@
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    /* Permite que el footer quede siempre pegado abajo */
+    /* Permite que el pie de página quede siempre pegado abajo */
   }
 
-  .wrap{
+  .contenedor{
+    /* Envuelve y centra todo el contenido de la página */
     max-width:1100px;
     width:100%;
     margin:0 auto;
@@ -46,7 +47,7 @@
     color:var(--verde-oscuro);
     background:#fff;
   }
-  nav a.active{
+  nav a.activo{
     font-weight:bold;
   }
 
@@ -61,24 +62,24 @@
     color:var(--dorado-claro) !important;
   }
 
-  p, li, .item {
+  p, li, .elemento {
     color:#ffffff !important;
   }
 
-  .card{
+  .tarjeta{
     background:var(--verde);
     color:#fff;
     padding:34px 40px;
     margin-bottom:20px;
   }
 
-  .timeline{
+  .linea-tiempo{
     display:flex;
     flex-direction:column;
     gap:22px;
     /* Cada fecha queda en su propia fila, con espacio entre ellas */
   }
-  .timeline .item{font-size:1.02rem;}
+  .linea-tiempo .elemento{font-size:1.02rem;}
 
   footer{
     background:var(--dorado-claro);
@@ -89,24 +90,24 @@
 </head>
 <body>
 
-<div class="wrap">
+<div class="contenedor">
   <!-- Menú de navegación entre las páginas de la presentación -->
   <nav>
     <a href="index.html">Inicio</a>
-    <a href="02-fechas.html" class="active">Fechas importantes</a>
+    <a href="02-fechas.html" class="activo">Fechas importantes</a>
     <a href="03-personajes.html">Personajes</a>
     <a href="04-mitos-datos.html">Mitos y Datos</a>
   </nav>
 
   <!-- Línea del tiempo con las fechas clave del Mes Patrio -->
-  <section id="slide-2">
+  <section id="seccion-2">
     <h1>Fechas importantes (Línea del tiempo)</h1>
-    <div class="card timeline">
-      <div class="item">• <strong>13 de septiembre (1847):</strong> Defensa del Castillo de Chapultepec por los Niños Héroes.</div>
-      <div class="item">• <strong>15 de septiembre (1810):</strong> Conmemoración del Grito de Independencia por Miguel Hidalgo.</div>
-      <div class="item">• <strong>16 de septiembre (1810):</strong> Día oficial del Inicio de la Independencia de México.</div>
-      <div class="item">• <strong>27 de septiembre (1821):</strong> Entrada del Ejército Trigarante y Consumación de la Independencia.</div>
-      <div class="item">• <strong>30 de septiembre (1765):</strong> Natalicio de José María Morelos y Pavón, héroe insurgente.</div>
+    <div class="tarjeta linea-tiempo">
+      <div class="elemento">• <strong>13 de septiembre (1847):</strong> Defensa del Castillo de Chapultepec por los Niños Héroes.</div>
+      <div class="elemento">• <strong>15 de septiembre (1810):</strong> Conmemoración del Grito de Independencia por Miguel Hidalgo.</div>
+      <div class="elemento">• <strong>16 de septiembre (1810):</strong> Día oficial del Inicio de la Independencia de México.</div>
+      <div class="elemento">• <strong>27 de septiembre (1821):</strong> Entrada del Ejército Trigarante y Consumación de la Independencia.</div>
+      <div class="elemento">• <strong>30 de septiembre (1765):</strong> Natalicio de José María Morelos y Pavón, héroe insurgente.</div>
     </div>
   </section>
 </div>
@@ -115,4 +116,3 @@
 
 </body>
 </html>
-
