@@ -17,7 +17,6 @@
   *{box-sizing:border-box;}
   body{
     margin:0;
-    font-family:Georgia, 'Times New Roman', serif;
     color:var(--texto);
     background-image:url('mexico (1).png');
     background-size:cover;
@@ -40,49 +39,22 @@
   }
 
   nav{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-bottom:34px;
-    background:rgba(255,255,255,.85);
-    padding:14px 18px;
-    border-radius:18px;
-    box-shadow:0 4px 16px rgba(0,0,0,.15);
+    margin-bottom:20px;
   }
   nav a{
-    font-family:Georgia, serif;
-    font-size:0.95rem;
+    margin-right:15px;
     color:var(--verde-oscuro);
     background:#fff;
-    border:1.5px solid var(--dorado);
-    border-radius:999px;
-    /* Un radio muy alto crea la forma de botón ovalado */
-    padding:10px 26px;
-    cursor:pointer;
-    transition:background .2s ease, color .2s ease;
-    font-weight:bold;
-    text-decoration:none;
-    display:inline-block;
-  }
-  nav a:hover{
-    background:var(--dorado-claro);
-    color:var(--verde-oscuro);
   }
   nav a.active{
-    /* Marca visualmente en qué página del menú estás */
-    background:var(--dorado-claro);
-    color:#fff;
-    border-color:var(--dorado-claro);
+    font-weight:bold;
   }
 
   h1, h2 {
     text-align:center;
     color:var(--rojo) !important;
     font-weight:bold;
-    font-size:2.2rem;
     margin:0 0 26px;
-    text-shadow:0 0 12px #fff, 0 0 24px #fff, 0 2px 4px rgba(0,0,0,.3);
-    /* El "halo" blanco ayuda a leer el texto rojo sobre la imagen de fondo */
   }
 
   h3, h4, strong {
@@ -96,11 +68,8 @@
   .card{
     background:var(--verde);
     color:#fff;
-    border-radius:22px;
     padding:34px 40px;
-    line-height:1.65;
     margin-bottom:20px;
-    box-shadow:0 6px 20px rgba(0,0,0,.25);
   }
 
   .timeline{
@@ -112,15 +81,9 @@
   .timeline .item{font-size:1.02rem;}
 
   footer{
-    width:100%;
     background:var(--dorado-claro);
-    text-align:center;
-    padding:26px 20px;
-    font-size:1.05rem;
-    color:#00ffff;
-    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+    /* Solo se pide color dorado, sin ningún otro diseño */
     margin-top:auto;
-    font-weight:bold;
   }
 </style>
 </head>
@@ -129,7 +92,7 @@
 <div class="wrap">
   <!-- Menú de navegación entre las páginas de la presentación -->
   <nav>
-    <a href="index.html">Inicio</a>
+    <a href="01-inicio.html">Inicio</a>
     <a href="02-fechas.html" class="active">Fechas importantes</a>
     <a href="03-personajes.html">Personajes</a>
     <a href="04-mitos-datos.html">Mitos y Datos</a>
