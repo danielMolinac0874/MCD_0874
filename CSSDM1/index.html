@@ -26,8 +26,6 @@
   }
   body{
     margin:0;
-    font-family:Georgia, 'Times New Roman', serif;
-    /* Tipografía con serifas, look más "formal/clásico" */
     color:var(--texto);
     background-image:url('mexico (1).png');
     /* Imagen de fondo de la página */
@@ -58,44 +56,18 @@
   }
 
   nav{
-    display:flex;
-    /* Pone los enlaces del menú en fila, uno al lado del otro */
-    gap:20px;
-    /* Espacio entre cada enlace */
-    flex-wrap:wrap;
-    /* Si no caben en una fila, pasan a la siguiente línea */
-    margin-bottom:34px;
-    background:#ffffff;
-    /* Fondo blanco sólido para el menú */
-    padding:14px 18px;
-    border-radius:8px;
-    /* Esquinas ligeramente redondeadas del menú */
+    margin-bottom:20px;
+    /* Separación entre el menú y el contenido de abajo */
   }
   nav a{
-    font-family:Georgia, serif;
-    font-size:0.95rem;
+    margin-right:15px;
+    /* Espacio entre cada enlace */
     color:var(--verde-oscuro);
     background:#fff;
-    border:1.5px solid var(--dorado);
-    border-radius:6px;
-    /* Botones con esquinas apenas redondeadas, forma rectangular básica */
-    padding:10px 26px;
-    cursor:pointer;
-    font-weight:bold;
-    text-decoration:none;
-    /* Quita el subrayado típico de los enlaces */
-    display:inline-block;
-  }
-  nav a:hover{
-    /* Estilo cuando el mouse pasa por encima del enlace */
-    background:var(--dorado-claro);
-    color:var(--verde-oscuro);
   }
   nav a.active{
-    /* Estilo especial para marcar en qué página estás actualmente */
-    background:var(--dorado-claro);
-    color:#fff;
-    border-color:var(--dorado-claro);
+    /* Marca en negritas cuál es la página actual */
+    font-weight:bold;
   }
 
   h1, h2 {
@@ -103,7 +75,6 @@
     color:var(--rojo) !important;
     /* !important fuerza este color aunque otra regla más abajo intente cambiarlo */
     font-weight:bold;
-    font-size:2.2rem;
     margin:0 0 26px;
   }
 
@@ -121,10 +92,7 @@
     /* La "tarjeta" verde que contiene el texto principal de cada sección */
     background:var(--verde);
     color:#fff;
-    border-radius:22px;
     padding:34px 40px;
-    line-height:1.65;
-    /* Más espacio entre líneas, para que sea más fácil de leer */
     margin-bottom:20px;
   }
   .card ul{margin:10px 0 0; padding-left:22px;}
@@ -132,17 +100,11 @@
   .card p{margin:0 0 10px;}
 
   footer{
-    width:100%;
     background:var(--dorado-claro);
-    text-align:center;
-    padding:26px 20px;
-    font-size:1.05rem;
-    color:#00ffff;
-    /* Color cian para el texto del pie de página */
+    /* Solo se pide color dorado, sin ningún otro diseño */
     margin-top:auto;
     /* Junto con el flex del body, esto empuja el footer al fondo de la pantalla
        aunque haya poco contenido */
-    font-weight:bold;
   }
 
 </style>
@@ -152,7 +114,7 @@
 <div class="wrap">
   <!-- Menú de navegación: enlaces a las demás páginas de la presentación -->
   <nav>
-    <a href="index.html" class="active">Inicio</a>
+    <a href="01-inicio.html" class="active">Inicio</a>
     <!-- class="active" marca esta página como la actual -->
     <a href="02-fechas.html">Fechas importantes</a>
     <a href="03-personajes.html">Personajes</a>
