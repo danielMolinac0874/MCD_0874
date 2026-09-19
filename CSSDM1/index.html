@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- Le dice al navegador que use el estándar HTML5 -->
 <html lang="es">
@@ -41,10 +42,11 @@
     display:flex;
     flex-direction:column;
     /* Organiza el body en columna: esto es lo que permite
-       que el footer quede siempre pegado abajo */
+       que el pie de página quede siempre pegado abajo */
   }
 
-  .wrap{
+  .contenedor{
+    /* Envuelve y centra todo el contenido de la página (antes se llamaba .wrap) */
     max-width:1100px;
     /* Ancho máximo del contenido, para que no se estire demasiado en pantallas grandes */
     width:100%;
@@ -52,7 +54,7 @@
     /* Centra el contenedor horizontalmente */
     padding:28px 32px 40px;
     flex:1;
-    /* Hace que este bloque "crezca" y empuje el footer hacia abajo */
+    /* Hace que este bloque "crezca" y empuje el pie de página hacia abajo */
   }
 
   nav{
@@ -65,8 +67,8 @@
     color:var(--verde-oscuro);
     background:#fff;
   }
-  nav a.active{
-    /* Marca en negritas cuál es la página actual */
+  nav a.activo{
+    /* Marca en negritas cuál es la página actual (antes se llamaba .active) */
     font-weight:bold;
   }
 
@@ -83,27 +85,27 @@
     color:var(--dorado-claro) !important;
   }
 
-  p, li, .item, .mito p, .dato p {
+  p, li, .elemento, .mito p, .dato p {
     /* Texto normal y de listas en blanco, para que resalte sobre las tarjetas verdes */
     color:#ffffff !important;
   }
 
-  .card{
-    /* La "tarjeta" verde que contiene el texto principal de cada sección */
+  .tarjeta{
+    /* El recuadro verde que contiene el texto principal de cada sección (antes se llamaba .card) */
     background:var(--verde);
     color:#fff;
     padding:34px 40px;
     margin-bottom:20px;
   }
-  .card ul{margin:10px 0 0; padding-left:22px;}
-  .card li{margin-bottom:10px;}
-  .card p{margin:0 0 10px;}
+  .tarjeta ul{margin:10px 0 0; padding-left:22px;}
+  .tarjeta li{margin-bottom:10px;}
+  .tarjeta p{margin:0 0 10px;}
 
   footer{
     background:var(--dorado-claro);
     /* Solo se pide color dorado, sin ningún otro diseño */
     margin-top:auto;
-    /* Junto con el flex del body, esto empuja el footer al fondo de la pantalla
+    /* Junto con el flex del body, esto empuja el pie de página al fondo de la pantalla
        aunque haya poco contenido */
   }
 
@@ -111,20 +113,20 @@
 </head>
 <body>
 
-<div class="wrap">
+<div class="contenedor">
   <!-- Menú de navegación: enlaces a las demás páginas de la presentación -->
   <nav>
-    <a href="01-inicio.html" class="active">Inicio</a>
-    <!-- class="active" marca esta página como la actual -->
+    <a href="index.html" class="activo">Inicio</a>
+    <!-- class="activo" marca esta página como la actual -->
     <a href="02-fechas.html">Fechas importantes</a>
     <a href="03-personajes.html">Personajes</a>
     <a href="04-mitos-datos.html">Mitos y Datos</a>
   </nav>
 
   <!-- Sección con el contenido principal de esta diapositiva/página -->
-  <section id="slide-1">
+  <section id="seccion-1">
     <h1>P1- Presentación Mes Patrio</h1>
-    <div class="card">
+    <div class="tarjeta">
       <p><strong>El Mes de la Patria</strong> se celebra en septiembre porque es el mes en el que inició y se consumó la Independencia de México, concentrando los eventos históricos más importantes de la libertad nacional.</p>
       <p><strong>Las razones principales:</strong></p>
       <ul>
