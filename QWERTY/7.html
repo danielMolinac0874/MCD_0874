@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!--Permite caracteres como , ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--adecuado para celulares-->
+    <title>Tipos de listas en HTML</title><!--Titulo de la pestaña-->
+</head>
+<body>
+    <h1>Tipos de listas</h1><!--Titulo principal-->
+    <h2>Listas ordenadas</h2><!--subtitulo-->
+    <p>Una lista ordenada es una serie de elementos los cuales <!--texto explicativo-->
+        tendran una numeracion de acuerdo al numeros de elementos.
+    </p>
+    <ol><!--ol lista ordenada con numeros-->
+        <li>Luna Arias </li><!--li elemento de la lista-->
+        <li>Franco Andrea</li>
+        <li>Granados Evelyn</li>
+    </ol>
+    <h2>Listas no ordenadas</h2><!--subtitulo-->
+    <p>Las listas no ordenadas no utilizan ninguna numeracion delante <!--texto explicativo-->
+        de cada item sino un pequeño elemento grafico
+    </p>
+    <ul><!--ul lista no ordenada con viñetas-->
+        <li>C</li><!--li elemento de la lista-->
+        <li>C++</li>
+        <li>Python</li>
+    </ul>
+    <h2>Lista de definiciones</h2><!--subtitulo-->
+    <p>Se utiliza para asociar un termino y la definicion del mismo</p><!--texto explicativo-->
+    <dl><!--dl lista de definiciones-->
+        <!-- Primer termino-->
+        <dt>C++</dt><!--dt concepto o termino-->
+        <!-- Definicion del primer termino-->
+        <dd><!--dd definicion del termino-->
+            Es un lenguaje de programacion, diseñado a mediados de los años
+            1980 como extension del lenguaje de programacion C.
+        </dd>
+        <!-- Segundo termino-->
+        <dt>Java</dt>
+        <!-- Definicion del segundo termino-->
+        <dd>
+            Es un lenguaje de programacion orientado a objetos desarrollado
+            por Sun Microsystem a principios de los 90.
+        </dd>
+        <!-- Tercer termino-->
+        <dt>JavaScript</dt>
+        <!-- Definicion del tercer termino-->
+        <dd>
+            Es un lenguaje interpretado, es decir que no requiere compilacion,
+            utilizado principalmente en paginas web, con una sintaxis similar
+            al lenguaje de programacion C.
+        </dd>
+    </dl>
+    <h2>Listas anidadas</h2><!--subtitulo-->
+    <p>En HTML nos permite insertar una lista dentro de otra lista, se pueden<!--texto explicativo-->
+        anidar diferentes tipos de lista de acuerdo al requerimiento
+    </p>
+    <ol><!--lista principal ordenada-->
+        <li>Argentina<!--elemento de la lista principal-->
+            <ul><!--lista adentro de otra lista-->
+                <li>Buenos aires</li>
+                <li>La plata</li>
+                <li>Mendoza</li>
+            </ul>
+        </li>
+        <li>España
+            <ul>
+                <li>Barcelona</li>
+                <li>Madrid</li>
+                <li>Sevilla</li>
+            </ul>
+        </li>
+        <li>Mexico
+            <ul>
+                <li>Chihuahua</li>
+                <li>Cd. Juarez</li>
+                <li>Hermosillo</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+<!--Daniel Molina Contreras 5J-->
+</html>
