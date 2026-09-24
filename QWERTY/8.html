@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><!--Permite caracteres como , ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--adecuado para celulares-->
+    <title>Tablas en HTML</title><!--Titulo de la pestaña-->
+</head>
+
+<body>
+    <h1>Tipos de tablas</h1><!--Titulo principal-->
+    <p>El objetivo fundamental de las tablas en HTML sera<!--texto explicativo-->
+        mostrar una serie de datos en forma ordenada,
+        organizado en filas y columnas
+    </p>
+    <p>Para la creacion de una tabla intervienen diferentes elementos:</p><!--texto del subtitulo-->
+    <dl><!--lista de definiciones-->
+        <dt>Table</dt><!--termino-->
+        <dd><!--definicion-->
+            Es la marca de comienzo de la tabla. Este elemento requiere
+            la marca de cierre.
+        </dd>
+        <dt>Tr</dt>
+        <dd>
+            Es la marca de comienzo de una fila. Esta marca debe estar
+            dentro del elemento table
+        </dd>
+        <dt>Td</dt>
+        <dd>
+            Es la marca de comeinzo de una celda. Esta marca debe estar
+            dentro del elemento tr
+        </dd>
+    </dl>
+    <h2>Ejemplo</h2><!--subtitulo-->
+    <table border="1"><!--table crea la tabla, border le pone borde-->
+        <tr><!--tr representa una fila-->
+            <td>Ciudad de Mexico</td><!--td representa una celda de datos-->
+            <td>9.2 millones</td>
+        </tr>
+        <tr>
+            <td>Guadalajara</td>
+            <td>4.1 millones</td>
+        </tr>
+        <tr>
+            <td>Monterrey</td>
+            <td>3.9 millones</td>
+        </tr>
+    </table>
+    <h2>Tabla con encabezado</h2><!--subtitulo-->
+    <p>La caracteristicas de esta tabla es que se le agrega a las celdas <!--texto explicativo-->
+        el encabezado correspondiente, esto solo aplicaria a la primera
+        fila de la tabla con la etiqueta <em>th</em>, las demas filas<!--em es Cuerveadas como de ladito-->
+        usarian la etiqueta <em>td</em> con normalidad.
+    </p>
+    <table border="1">
+        <tr>
+            <th>Ciudad</th><!--th celda de encabezado en negrita-->
+            <th>Cantidad de habitantes</th>
+        </tr>
+        <tr>
+            <td>Ciudad de Mexico</td>
+            <td>9.2 millones</td>
+        </tr>
+        <tr>
+            <td>Guadalajara</td>
+            <td>4.1 millones</td>
+        </tr>
+        <tr>
+            <td>Monterrey</td>
+            <td>3.9 millones</td>
+        </tr>
+    </table>
+    <h2>Tabla con titulo</h2><!--subtitulo-->
+    <p>Para insertar un titulo a la tabla debemos incorporar el elemento caption <!--texto explicativo-->
+        inmediatamente despues de abrir la etiqueta <em>table</em>.
+    </p>
+    <table border="1">
+        <caption>Poblacion de las ciudades mas concurridas de Mexico</caption><!--caption agrega el titulo a la tabla-->
+        <tr>
+            <th>Ciudad</th>
+            <th>Cantidad de habitantes</th>
+        </tr>
+        <tr>
+            <td>Ciudad de Mexico</td>
+            <td>9.2 millones</td>
+        </tr>
+        <tr>
+            <td>Guadalajara</td>
+            <td>4.1 millones</td>
+        </tr>
+        <tr>
+            <td>Monterrey</td>
+            <td>3.9 millones</td>
+        </tr>
+    </table>
+</body>
+<!--Daniel Molina Contreras 5J-->
+</html>
