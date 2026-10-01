@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Página WEB de ejemplo: texto</title><!--Titulo de la pestaña-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Semaforo en HTML</title>
 </head>
-
-<body text="orange"><!--text="orange" define el color general del texto de la pagina en naranja-->
-    <b>Esta es una línea</b>, y a continuación <b><u>insertamos un salto</u></b> de línea.<br/><!--b es negrita, u es subrayado, br salto de linea-->
-    Esta es una línea, y <u>a continuación insertamos</u> un salto de línea.<br/><!--u subraya el texto-->
-    Esta es una línea, y <strong>a continuación</strong> insertamos un <i>salto de línea</i>.<br/><!--strong es NEGRITAS, i es letra cursiva-->
-    <font color="green" size="11px">Esta es una línea</font>, y a continuación insertamos un <i>salto de línea</i>.<br/><!--font color cambia el color del texto, size el tamaño-->
-    <font face="Arial">Esta es una</font> línea, y <font color="red">a continuación</font> insertamos un salto de línea.<br/><!--face cambia el tipo de fuente o tipografia-->
-    <p>Este es una párrafo <font color="cyan">con <u>la letra</u> en <b>diferentes formatos</b></font></p><!--p es un parrafo con varias etiquetas combinadas-->
+<body>
+    <table border="0" align="center">
+        <caption>Practica 6 Atributos Texto 5J</caption>
+        <tr>
+            <th align="center" bgcolor="7FACFA">TIPO DE ATENCION</th>
+            <th align="center" bgcolor="7FACFA">AREA DE ATENCION</th>
+            <th align="center" bgcolor="7FACFA">TIEMPO DE ESPERA</th>
+        </tr>
+        <tr>
+            <td align="center">
+                <font color="red" size="6">REANIMACION</font></td>
+            <td align="center">
+                <font color="red">Area de<br> reanimacion</font></td>
+            <td align="center">
+                <font color="red">Inmediato<br> hasta 3min</font></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <font color="orange" size="6">EMERGENCIA</font></td>
+            <td align="center">
+                <font color="orange">Area de <br>reanimcaion</font></td>
+            <td align="center">
+                <font color="orange">Inmediato<br>Hasta 10min</font></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <font color="yellow" size="6">URGENCIA</font></td>
+            <td align="center">
+                <font color="yellow">Consulta de <br>primer contacto</font></td>
+            <td align="center">
+                <font color="yellow">Hasta 30min</font></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <font color="green" size="6">URGENCIA MENOR</font></td>
+            <td align="center">
+                <font color="green">Consultorio de<br> primer contacto <br>o UMF</font></td>
+            <td align="center">
+                <font color="green">Hasta 120min</font></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <font color="blue" size="6">SIN URGENCIA</font></td>
+            <td align="center">
+                <font color="blue">Consultorio de <br>primer contacto<br> o UMF</font></td>
+            <td align="center">
+                <font color="blue">Hasta 180min</font></td>
+        </tr>
+    </table>
 </body>
-
-</html>
 <!--Daniel Molina Contreras 5J-->
+</html>
