@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"> <!--Para poner ñ y , cosas asi -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--adaptados para celulares -->
+
+<title>Formulario basico</title><!--Titulo de pagina-->
+</head>
+<body>
+<h1>Formulario basico</h1>
+
+<!-- <form> indica formulario 
+     action="" -> URL del script del servidor que recibe los datos (vacio = misma pagina)
+     method="post" -> envia los datos ocultos dentro de la peticion (get los pondria en la URL). -->
+<form action="" method="post">
+  Ingresa tu nombre:<!--el texto que ve el usuario -->
+  <!-- type="text": caja de texto de una linea.
+       name="nombre": nombre con el que el servidor recibira el dato.
+       size="20": ancho visible de la caja en caracteres. -->
+  <input type="text" name="nombre" size="20">
+  <br>
+  <!-- type="submit": boton que envia el formulario. value = texto del boton -->
+  <input type="submit" value="enviar">
+</form>
+</body>
+</html>
+<!-- Daniel Molina Contreras 5J -->

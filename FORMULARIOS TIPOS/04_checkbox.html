@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="es">
+>
+<head>
+<!--permite acentos y la letra ñ -->
+<meta charset="UTF-8">
+<!-- Hace que la pagina se adapte a celulares -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Titulo que aparece en la pestaña del navegador -->
+<title>Formulario con checkbox</title>
+</head>
+<body>
+<h1>Formulario con checkbox</h1>
+<!-- <form> indica formulario 
+     action="" -> URL del script del servidor que recibe los datos (vacio = misma pagina)
+     method="post" -> envia los datos ocultos dentro de la peticion (get los pondria en la URL). -->
+<form action="" method="post">
+  Ingresa tu nombre:
+  <input type="text" name="nombre"><br>
+  Selecciona los lenguajes que conozcas:
+  <br>
+  <!-- type="checkbox": casilla que se puede marcar o desmarcar.
+       Se pueden marcar VARIAS a la vez.
+       value: dato que se envia si esta marcada (si no se pone, se envia "on"). -->
+  <input type="checkbox" name="Java" value="si"> Java <br>
+  <input type="checkbox" name="Python" value="si"> Python <br>
+  <input type="checkbox" name="C#" value="si"> C# <br>
+  <!-- checked: la casilla aparece marcada desde el inicio (ejemplo) -->
+  <input type="checkbox" name="Flutter" value="si" checked> Flutter <br>
+  <!-- El original no tenia boton de envio; se agrega para poder enviar -->
+  <input type="submit" value="enviar">
+</form>
+</body>
+</html>
+<!-- Daniel Molina Contreras 5J -->

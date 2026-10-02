@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--permite acentos y la letra ñ -->
+<meta charset="UTF-8">
+<!--pagina se adapte a celulares -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario con radio buttons</title>
+</head>
+<body>
+<h1>Formulario con radio buttons</h1>
+<!-- <form> indica formulario 
+     action="" -> URL del script del servidor que recibe los datos (vacio = misma pagina)
+     method="post" -> envia los datos ocultos dentro de la peticion (get los pondria en la URL). -->
+<form action="" method="post">
+  Ingresa tu nombre:
+  <input type="text" name="nombre">
+  <br>
+  Selecciona el maximo de estudios que tienes:
+  <br>
+  <!-- type="radio": solo se puede elegir UNA opcion del grupo.
+       IMPORTANTE: todos los radios del grupo deben tener el MISMO name ("estudios").
+       value: dato que se envia al servidor segun la opcion elegida. -->
+  <input type="radio" name="estudios" value="1"> Sin estudios <br>
+  <input type="radio" name="estudios" value="2"> Primaria <br>
+  <input type="radio" name="estudios" value="3"> Secundaria <br>
+  <input type="radio" name="estudios" value="4"> Preparatoria <br>
+  <input type="submit" value="enviar">
+  <input type="reset" value="borrar">
+</form>
+</body>
+</html>
+<!-- Daniel Molina Contreras 5J -->
