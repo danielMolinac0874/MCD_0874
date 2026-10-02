@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Hace que la pagina se adapte al ancho de pantallas de celular -->
+<title>Formularios en HTML</title>
+<!-- Titulo que aparece en la pestaña del navegador -->
+<!-- Libreria de iconos en linea -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/7.3.1/css/all.min.css">
+<!-- Enlace a la hoja de estilos de Font Awesome para poder usar iconos (<i class="fa ...">) -->
+</head>
+<body>
+<!-- Body: todo lo que se ve en la pagina -->
+<h2>Formulario con campos ocultos</h2>
+<form action="" method="post">
+<!-- type="hidden": campo que NO se ve en pantalla pero SI se envia al servidor.
+     Sirve para mandar datos como una hora, un id o un token -->
+<input type="hidden" name="hora" value="3:30">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+</form>
+</body>
+<!-- Fin del contenido visible -->
+</html>
+<!-- Fin del documento -->

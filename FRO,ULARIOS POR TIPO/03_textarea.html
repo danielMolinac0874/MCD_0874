@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--permite acentos y la letra ñ -->
+<meta charset="UTF-8">
+<!-- Hace que la pagina se adapte a celulares -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario con textarea</title>
+</head>
+<body>
+<h1>Formulario con textarea</h1>
+<!-- <form> indica formulario 
+     action="" -> URL del script del servidor que recibe los datos (vacio = misma pagina)
+     method="post" -> envia los datos ocultos dentro de la peticion (get los pondria en la URL). -->
+<form action="" method="post">
+  Ingresa tu nombre:
+  <input type="text" name="nombre">
+  <br>
+  Ingresa tu correo:
+  <!-- type="email": el navegador valida que tenga formato de correo (algo@dominio.com) -->
+  <input type="email" name="correo">
+  <br>
+  Ingresa tus comentarios:
+  <!-- <textarea>: caja de texto de varias lineas.
+       rows = lineas visibles, cols = ancho en caracteres.-->
+  <textarea name="comentarios" rows="1" cols="4"></textarea>
+  <br>
+  <input type="submit" value="enviar">
+  <input type="reset" value="borrar">
+</form>
+</body>
+</html>

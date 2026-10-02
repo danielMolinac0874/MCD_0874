@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Declara que el documento es HTML5 -->
+<html lang="es">
+<!-- lang="es" indica que el contenido esta en español -->
+<head>
+<!-- Codificacion de caracteres: permite acentos y la letra ñ -->
+<meta charset="UTF-8">
+<!-- Hace que la pagina se adapte a celulares -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Titulo que aparece en la pestaña del navegador -->
+<title>Formulario con seleccion</title>
+</head>
+<body>
+<h1>Formulario con lista de seleccion</h1>
+<!-- <form> indica formulario 
+     action="" -> URL del script del servidor que recibe los datos (vacio = misma pagina)
+     method="post" -> envia los datos ocultos dentro de la peticion (get los pondria en la URL). -->
+<form action="" method="post">
+  Ingresa tu nombre:
+  <input type="text" name="nombre"><br>
+  Selecciona tu pais:
+  <!-- <select>: lista desplegable. Solo se elige una opcion. -->
+  <select name="pais">
+    <!-- <option>: cada elemento de la lista.
+         value = lo que se envia; el texto entre etiquetas = lo que ve el usuario -->
+    <option value="1">Argentina</option>
+    <option value="2">España</option>
+    <!-- selected: opcion elegida por defecto -->
+    <option value="3" selected>Mexico</option>
+    <option value="4">Guatemala</option>
+    <option value="5">Honduras</option>
+    <option value="6">El Salvador</option>
+    <option value="7">Venezuela</option>
+    <option value="8">Colombia</option>
+  </select>
+  <br>
+  <input type="submit" value="enviar">
+  <input type="reset" value="borrar">
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8"><!-- permite acentos y la letra ñ -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Hace que la pagina se adapte a celulares -->
+<title>Formulario para contraseñas</title><!-- Titulo que aparece en la pestaña del navegador -->
+</head>
+<body>
+<h1>Formulario para contraseñas</h1>
+<!-- <form> indica formulario 
+     action="" -> URL del script del servidor que recibe los datos (vacio = misma pagina)
+     method="post" -> envia los datos ocultos dentro de la peticion (get los pondria en la URL). -->
+<form action="" method="post">
+  Ingresa tu usuario:
+  <!-- Campo de texto normal para el usuario -->
+  <input type="text" name="usuario">
+  <br>
+  Ingresa tu contraseña:
+  <!-- type="password": oculta lo escrito con puntos o asteriscos -->
+  <input type="password" name="pass">
+  <br>
+  <!-- Boton para enviar los datos -->
+  <input type="submit" value="enviar">
+  <!-- type="reset": limpia todos los campos del formulario -->
+  <input type="reset" value="borrar">
+</form>
+</body>
+</html>
