@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     SITIO WEB: CIUDAD JUÁREZ
+     Autor: Daniel Molina Contreras 5-J
+     Todo el sitio está en UN SOLO ARCHIVO (HTML + estilos + un poquito de JavaScript).
+     Las imágenes se cargan desde archivos guardados en la misma carpeta.
+     ============================================================ -->
+<html lang="es">
+
+<head>
+    <!-- Permite que se vean bien los acentos y la letra ñ -->
+    <meta charset="UTF-8">
+    <!-- Hace que la página se acomode en celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Este es el nombre que aparece en la pestaña del navegador -->
+    <title>Ciudad Juárez</title>
+
+    <!-- ========================================================
+         ESTILOS (el "maquillaje" de la página: colores, letras, tamaños)
+         ======================================================== -->
+    <style>
+        /* ---------- ESTILO GENERAL ---------- */
+        /* "*" significa "todo": quitamos espacios raros que trae el navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Cuerpo de la página: letra Times New Roman y fondo gris clarito */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #e6e6e6;
+            color: #333333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* ---------- ENCABEZADO ---------- */
+        /* Aquí va el título y de fondo la imagen de la ciudad */
+        .encabezado {
+            /* Imagen local de Ciudad Juárez */
+            background-image: url("1.jpg");
+            /* Color gris oscuro por si la imagen no carga */
+            background-color: #555555;
+            background-size: cover;      /* la imagen cubre todo el encabezado */
+            background-position: center; /* la imagen se centra */
+            height: 300px;
+            display: flex;               /* sirve para centrar el título */
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* El título "Ciudad Juárez" en color blanco */
+        .encabezado h1 {
+            color: white;
+            font-size: 64px;
+            /* La sombra negra ayuda a leer el texto blanco sobre la foto */
+            text-shadow: 3px 3px 8px black;
+        }
+
+        /* ---------- BARRA DE NAVEGACIÓN ---------- */
+        /* Ocupa todo el ancho de la página, en horizontal */
+        .barra_navegacion {
+            display: flex;               /* pone los botones uno al lado del otro */
+            width: 100%;
+            background-color: #444444;
+        }
+
+        /* Cada uno de los 3 botones */
+        .barra_navegacion button {
+            flex: 1;                     /* los 3 botones miden lo mismo */
+            padding: 16px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+            color: white;
+            background-color: #444444;
+            border: none;
+            border-right: 1px solid #666666;
+            cursor: pointer;             /* manita al pasar el mouse */
+        }
+
+        /* Cuando pasas el mouse por encima el botón se aclara */
+        .barra_navegacion button:hover {
+            background-color: #777777;
+        }
+
+        /* El botón de la sección donde estás se ve más claro */
+        .barra_navegacion button.activo {
+            background-color: #888888;
+        }
+
+        /* ---------- CUERPO ---------- */
+        /* Caja central donde va el contenido */
+        .cuerpo {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        /* Las secciones (inicio, información, formulario) empiezan ocultas */
+        .seccion {
+            display: none;
+        }
+
+        /* La sección con la clase "visible" sí se muestra */
+        .seccion.visible {
+            display: block;
+        }
+
+        /* Tarjeta blanca-grisácea donde va cada bloque de contenido */
+        .tarjeta {
+            background-color: #f5f5f5;
+            border: 1px solid #bdbdbd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Títulos grandes y pequeños */
+        h2 {
+            color: #2b2b2b;
+            border-bottom: 2px solid #999999;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            color: #444444;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Imágenes: nunca se salen de su caja */
+        img {
+            max-width: 100%;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .imagen_seccion {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* Cada lugar (turístico, comida, etc.) tiene imagen a un lado y texto al otro */
+        .lugar {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #aaaaaa;
+        }
+
+        .lugar img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;           /* recorta la imagen para que no se deforme */
+            flex-shrink: 0;
+        }
+
+        /* Los datos de horario, precio y ubicación */
+        .datos {
+            background-color: #dcdcdc;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+
+        /* ---------- FORMULARIO ---------- */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 17px;
+            border: 1px solid #999999;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        /* Las casillas (checkbox) y bolitas (radio) en una línea cada una */
+        .opcion {
+            display: inline-block;
+            margin-right: 18px;
+            font-weight: normal;
+        }
+
+        /* Botón de enviar */
+        .boton_enviar {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            color: white;
+            background-color: #555555;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .boton_enviar:hover {
+            background-color: #777777;
+        }
+
+        /* Mensaje de "gracias" que aparece al enviar */
+        #mensaje_gracias {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #cfcfcf;
+            border-left: 6px solid #666666;
+            border-radius: 5px;
+        }
+
+        /* ---------- PIE DE PÁGINA (FOOTER) ---------- */
+        /* Color cyan con el nombre del autor */
+        .pie_pagina {
+            background-color: cyan;
+            color: #222222;
+            text-align: center;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ---------- CELULARES ---------- */
+        /* Si la pantalla es chica, la imagen se pone arriba del texto */
+        @media (max-width: 700px) {
+            .encabezado h1 { font-size: 40px; }
+            .lugar { flex-direction: column; }
+            .lugar img { width: 100%; }
+            .barra_navegacion button { font-size: 16px; padding: 12px 4px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================
+         ENCABEZADO: título blanco con imagen de fondo
+         ======================================================== -->
+    <header class="encabezado">
+        <h1>Ciudad Juárez</h1>
+    </header>
+
+    <!-- ========================================================
+         BARRA DE NAVEGACIÓN: 3 botones (Inicio, Información, Formulario)
+         Cuando das clic, se llama a la función "mostrarSeccion" (abajo en el JavaScript)
+         ======================================================== -->
+    <nav class="barra_navegacion">
+        <button id="boton_inicio" class="activo" onclick="mostrarSeccion('inicio')">Inicio</button>
+        <button id="boton_informacion" onclick="mostrarSeccion('informacion')">Información</button>
+        <button id="boton_formulario" onclick="mostrarSeccion('formulario')">Formulario</button>
+    </nav>
+
+    <!-- ========================================================
+         CUERPO: aquí están las 3 secciones, solo se ve una a la vez
+         ======================================================== -->
+    <main class="cuerpo">
+
+        <!-- ================= SECCIÓN 1: INICIO ================= -->
+        <section id="inicio" class="seccion visible">
+
+            <div class="tarjeta">
+                <h2>Bienvenido a Ciudad Juárez</h2>
+                <!-- Imagen principal guardada en la carpeta del sitio -->
+                <img src="1.jpg" alt="Vista de Ciudad Juárez">
+                <br>
+                <p>
+                    Ciudad Juárez es una ciudad del estado de Chihuahua, en el norte de México.
+                    Está justo en la frontera con Estados Unidos, al otro lado del río Bravo
+                    frente a la ciudad de El Paso, Texas. Es una de las ciudades más grandes
+                    del país y un lugar de mucho trabajo, comercio y cultura fronteriza.
+                </p>
+                <p>
+                    Aquí conviven tradiciones mexicanas con la influencia de la vida en la frontera.
+                    Su gente es trabajadora y amable, y su comida, sus museos y sus
+                    monumentos la hacen un lugar interesante para visitar.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h2>Sobre este sitio</h2>
+                <p>
+                    Este sitio fue creado para dar a conocer lo más importante de Ciudad Juárez.
+                    En el botón <b>Información</b> encontrarás lugares turísticos, comida,
+                    restaurantes y cultura. En el botón <b>Formulario</b> puedes contarnos
+                    qué piensas visitar y qué opinas de la ciudad.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h2>Un poco de historia</h2>
+                <img class="imagen_seccion" src="2.jpg" alt="Escena histórica de la Revolución Mexicana">
+                <p>
+                    Los primeros pobladores de la zona fueron grupos indígenas. En 1659, los frailes
+                    franciscanos fundaron aquí la Misión de Nuestra Señora de Guadalupe, y alrededor
+                    de ella nació el pueblo, que se llamó <b>Paso del Norte</b> por ser un paso natural
+                    sobre el río Bravo.
+                </p>
+                <p>
+                    En 1848, después de la guerra entre México y Estados Unidos, el río Bravo se
+                    convirtió en la frontera y la ciudad quedó dividida de El Paso, Texas.
+                </p>
+                <p>
+                    Durante la Revolución Mexicana, esta ciudad fue muy importante. En 1865 el
+                    presidente Benito Juárez estuvo aquí y, en 1888, el pueblo cambió su nombre a
+                    <b>Ciudad Juárez</b> en su honor. En 1911 aquí se firmaron los Tratados de
+                    Ciudad Juárez, que terminaron con el gobierno de Porfirio Díaz.
+                </p>
+                <p>
+                    Más adelante, con las fábricas maquiladoras, la ciudad creció muchísimo y se
+                    convirtió en un centro industrial y comercial muy importante.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 2: INFORMACIÓN ================= -->
+        <section id="informacion" class="seccion">
+
+            <!-- ---------- LUGARES TURÍSTICOS ---------- -->
+            <div class="tarjeta">
+                <h2>Lugares turísticos</h2>
+
+                <!-- Lugar 1 -->
+                <div class="lugar">
+                    <img src="5.jpg" alt="Monumento a Benito Juárez">
+                    <div>
+                        <h3>Monumento a Benito Juárez</h3>
+                        <p>Un gran monumento dedicado al presidente que le dio nombre a la ciudad.
+                           Es un lugar muy conocido para tomar fotos y pasear.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Todos los días, 24 horas (espacio abierto)<br>
+                            <b>Precio:</b> Gratis<br>
+                            <b>Ubicación:</b> Zona del Chamizal, Ciudad Juárez
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lugar 2 -->
+                <div class="lugar">
+                    <img src="8.jpg" alt="Misión de Guadalupe y Catedral">
+                    <div>
+                        <h3>Misión de Guadalupe y Catedral</h3>
+                        <p>Fundada en 1659, es uno de los edificios más antiguos de la ciudad.
+                           Se encuentra en el centro histórico, junto a la Catedral.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Aprox. 8:00 am a 8:00 pm (puede variar)<br>
+                            <b>Precio:</b> Entrada libre<br>
+                            <b>Ubicación:</b> Centro Histórico, Av. 16 de Septiembre
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lugar 3 -->
+                <div class="lugar">
+                    <img src="9.jpg" alt="Parque Chamizal">
+                    <div>
+                        <h3>Parque Público Federal El Chamizal</h3>
+                        <p>Un parque enorme con áreas verdes, juegos, caminos para correr y
+                           espacios para eventos y conciertos.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Todos los días, aprox. 6:00 am a 10:00 pm<br>
+                            <b>Precio:</b> Gratis (algunos eventos tienen costo)<br>
+                            <b>Ubicación:</b> Zona del Chamizal, Ciudad Juárez
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- GASTRONOMÍA ---------- -->
+            <div class="tarjeta">
+                <h2>Gastronomía</h2>
+
+                <!-- Comida 1 -->
+                <div class="lugar">
+                    <img src="6.jpg" alt="Burrito">
+                    <div>
+                        <h3>Burritos de machaca y de guisado</h3>
+                        <p>Tortilla de harina grande rellena de carne seca deshebrada (machaca),
+                           frijoles o guisados. Es un desayuno típico del norte.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Mañanas, aprox. 7:00 am a 2:00 pm<br>
+                            <b>Precio:</b> Desde $25 pesos aprox. cada uno<br>
+                            <b>Dónde:</b> Puestos y loncherías de toda la ciudad
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comida 2 -->
+                <div class="lugar">
+                    <img src="10.jpg" alt="Carne asada a la parrilla">
+                    <div>
+                        <h3>Carne asada y cortes</h3>
+                        <p>La carne asada es un orgullo del norte del país. Se come con tortillas,
+                           frijoles, cebollitas y salsas.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Comida y cena, aprox. 1:00 pm a 10:00 pm<br>
+                            <b>Precio:</b> Desde $150 pesos aprox. por persona<br>
+                            <b>Dónde:</b> Asaderos y restaurantes de la ciudad
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- RESTAURANTES ---------- -->
+            <div class="tarjeta">
+                <h2>Restaurantes</h2>
+
+                <!-- Restaurante 1 -->
+                <div class="lugar">
+                    <img src="7.jpg" alt="Platillo de Canana's Restaurante y Grill">
+                    <div>
+                        <h3>Restaurantes de comida norteña</h3>
+                        <p>En la zona de la Av. Hermanos Escobar y la Av. Tecnológico hay muchos
+                           restaurantes de comida mexicana y norteña para toda la familia.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Aprox. 8:00 am a 10:00 pm<br>
+                            <b>Precio:</b> De $120 a $350 pesos por persona aprox.<br>
+                            <b>Ubicación:</b> Av. Hermanos Escobar / Av. Tecnológico
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurante 2 -->
+                <div class="lugar">
+                    <img src="11.jpg" alt="Tacos al pastor">
+                    <div>
+                        <h3>Taquerías</h3>
+                        <p>Para una cena rápida y rica, las taquerías abundan en toda la ciudad.
+                           Prueba tacos de pastor, asada y gringas.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Aprox. 5:00 pm a 1:00 am<br>
+                            <b>Precio:</b> Desde $15 pesos aprox. por taco<br>
+                            <b>Ubicación:</b> Varias zonas de la ciudad
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- CULTURA ---------- -->
+            <div class="tarjeta">
+                <h2>Cultura</h2>
+
+                <!-- Cultura 1 -->
+                <div class="lugar">
+                    <img src="4.jpg" alt="Edificio del Museo de la Revolución en la Frontera">
+                    <div>
+                        <h3>Museo de la Revolución en la Frontera (MUREF)</h3>
+                        <p>Está en el edificio de la antigua aduana y cuenta cómo la Revolución
+                           Mexicana se vivió en la frontera.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Martes a domingo, aprox. 9:00 am a 5:00 pm<br>
+                            <b>Precio:</b> Aprox. $30 pesos (consultar)<br>
+                            <b>Ubicación:</b> Av. 16 de Septiembre, Centro
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultura 2 -->
+                <div class="lugar">
+                    <img src="12.jpg" alt="Museo de Arte de Ciudad Juárez">
+                    <div>
+                        <h3>Museo de Arte e Historia</h3>
+                        <p>Exposiciones de pintura, escultura e historia local. Una buena opción
+                           para pasar la tarde y conocer a los artistas de la región.</p>
+                        <div class="datos">
+                            <b>Horario:</b> Martes a domingo, aprox. 10:00 am a 6:00 pm<br>
+                            <b>Precio:</b> Aprox. $20 a $40 pesos (consultar)<br>
+                            <b>Ubicación:</b> Zona Centro, Ciudad Juárez
+                        </div>
+                    </div>
+                </div>
+
+                <p><i>Nota: los horarios y precios son aproximados y pueden cambiar; conviene
+                   confirmarlos antes de visitar.</i></p>
+            </div>
+        </section>
+
+        <!-- ================= SECCIÓN 3: FORMULARIO ================= -->
+        <section id="formulario" class="seccion">
+            <div class="tarjeta">
+                <h2>Cuéntanos de tu visita</h2>
+
+                <!-- El formulario. Al enviarlo se llama a la función "enviarFormulario" -->
+                <form id="formulario_visita" onsubmit="return enviarFormulario()">
+
+                    <!-- Datos de la persona -->
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="120" required>
+
+                    <label for="ciudad_origen">¿De dónde nos visitas?</label>
+                    <input type="text" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad y país">
+
+                    <!-- Lugares a visitar: se pueden marcar varios -->
+                    <label>¿Qué lugares piensas visitar? (puedes marcar varios)</label>
+                    <label class="opcion"><input type="checkbox" name="lugares" value="Monumento a Juárez"> Monumento a Juárez</label>
+                    <label class="opcion"><input type="checkbox" name="lugares" value="Misión de Guadalupe"> Misión de Guadalupe</label>
+                    <label class="opcion"><input type="checkbox" name="lugares" value="Parque Chamizal"> Parque Chamizal</label>
+                    <label class="opcion"><input type="checkbox" name="lugares" value="Museos"> Museos</label>
+
+                    <!-- Comida: se elige solo una -->
+                    <label>¿Qué piensas comer?</label>
+                    <label class="opcion"><input type="radio" name="comida" value="Burritos" checked> Burritos</label>
+                    <label class="opcion"><input type="radio" name="comida" value="Carne asada"> Carne asada</label>
+                    <label class="opcion"><input type="radio" name="comida" value="Tacos"> Tacos</label>
+                    <label class="opcion"><input type="radio" name="comida" value="Otra"> Otra</label>
+
+                    <!-- Lista desplegable -->
+                    <label for="dias_visita">¿Cuántos días planeas quedarte?</label>
+                    <select id="dias_visita" name="dias_visita">
+                        <option value="1">1 día</option>
+                        <option value="2">2 días</option>
+                        <option value="3">3 días</option>
+                        <option value="mas">Más de 3 días</option>
+                    </select>
+
+                    <!-- Comentario libre -->
+                    <label for="comentario">¿Qué piensas de la ciudad?</label>
+                    <textarea id="comentario" name="comentario" rows="5" placeholder="Escribe aquí tu opinión..."></textarea>
+
+                    <!-- Botón para enviar -->
+                    <button type="submit" class="boton_enviar">Enviar</button>
+                </form>
+
+                <!-- Este mensaje aparece solo después de enviar -->
+                <div id="mensaje_gracias"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================
+         PIE DE PÁGINA (FOOTER): color cyan con el nombre del autor
+         ======================================================== -->
+    <footer class="pie_pagina">
+        Daniel Molina Contreras 5-J
+    </footer>
+
+    <!-- ========================================================
+         JAVASCRIPT: lo que hace que la página "se mueva"
+         (cambiar de sección y responder al enviar el formulario)
+         ======================================================== -->
+    <script>
+        // Esta función muestra la sección que se eligió y esconde las demás.
+        // "nombreSeccion" puede ser: 'inicio', 'informacion' o 'formulario'
+        function mostrarSeccion(nombreSeccion) {
+
+            // Lista con los nombres de las 3 secciones
+            var secciones = ['inicio', 'informacion', 'formulario'];
+
+            // Recorremos la lista de una en una
+            for (var i = 0; i < secciones.length; i++) {
+                var nombre = secciones[i];
+
+                // Si es la sección elegida la mostramos, si no la ocultamos
+                if (nombre === nombreSeccion) {
+                    document.getElementById(nombre).classList.add('visible');
+                    document.getElementById('boton_' + nombre).classList.add('activo');
+                } else {
+                    document.getElementById(nombre).classList.remove('visible');
+                    document.getElementById('boton_' + nombre).classList.remove('activo');
+                }
+            }
+
+            // Regresa la página hasta arriba
+            window.scrollTo(0, 0);
+        }
+
+        // Esta función se ejecuta cuando la persona da clic en "Enviar"
+        function enviarFormulario() {
+
+            // Tomamos el nombre que escribió la persona
+            var nombrePersona = document.getElementById('nombre').value;
+
+            // Buscamos el cuadro de "gracias" y le ponemos un mensaje
+            var cuadroGracias = document.getElementById('mensaje_gracias');
+            cuadroGracias.innerHTML = '¡Gracias, ' + nombrePersona +
+                '! Recibimos tus respuestas. ¡Esperamos que disfrutes Ciudad Juárez!';
+            cuadroGracias.style.display = 'block';   // lo hacemos visible
+
+            // Limpiamos el formulario para que quede vacío
+            document.getElementById('formulario_visita').reset();
+
+            // "return false" evita que la página se recargue
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
