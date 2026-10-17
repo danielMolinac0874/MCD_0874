@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinepolis - Cartelera</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+        header { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; padding: 20px; background: #06112b; }
+        header a, header span { color: white; text-decoration: none; }
+        header .inicio { font-size: 24px; font-weight: bold; }
+        .submenu { padding: 20px; text-align: center; background: white; }
+        .submenu a { margin: 20px; color: #477cff; font-size: 22px; }
+        main { margin: 20px; }
+        .peliculas { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .peliculas img { width: 100%; height: 210px; object-fit: cover; }
+        .cine { margin: 20px 0; padding: 15px; background: white; }
+        .registro { max-width: 500px; margin: 30px auto; padding: 20px; background: white; }
+        .registro label, .registro input { display: block; margin: 10px 0; }
+        .registro input { box-sizing: border-box; width: 100%; padding: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="inicio" href="#cartelera">Cinepolis</a>
+        <span>Películas</span>
+        <span>Alimentos</span>
+        <a href="#registro">Club Cinepolis</a>
+        <span>Promos</span>
+        <span>Especiales</span>
+        <span>Coleccionables</span>
+    </header>
+
+    <nav class="submenu">
+        <a href="#cartelera">Cartelera</a>
+        <a href="#proximamente">Proximamente</a>
+    </nav>
+
+    <main>
+        <section id="cartelera">
+            <div class="cine">
+                <label for="cine">Elige tu cine:</label>
+                <select id="cine" name="cine">
+                    <option value="">Selecciona un cine</option>
+                    <option>Gran Patio</option>
+                    <option>Sendero Las Torres</option>
+                    <option>Sendero</option>
+                    <option>Misiones</option>
+                    <option>Las Américas</option>
+                </select>
+            </div>
+            <h1>Películas en cartelera</h1>
+            <div class="peliculas">
+                <div><img src="p1.jfif" alt="Street Fighter"><p>Street Fighter</p></div>
+                <div><img src="p2.jfif" alt="DoomsDay"><p>DoomsDay</p></div>
+                <div><img src="p3.jfif" alt="La Caída De La Ballena"><p>La Caída De La Ballena</p></div>
+                <div><img src="p4.jfif" alt="El Laberinto Del Fauno"><p>El Laberinto Del Fauno</p></div>
+                <div><img src="p5.jfif" alt="Verity: La Sombra De Un Engaño"><p>Verity: La Sombra De Un Engaño</p></div>
+                <div><img src="p6.jfif" alt="Digger"><p>Digger</p></div>
+                <div><img src="p8.jfif" alt="Madre Siniestra"><p>Madre Siniestra</p></div>
+                <div><img src="p7.jfif" alt="Super Canino"><p>Super Canino</p></div>
+                <div><img src="p9.jfif" alt="La Caída De La Ballena"><p>La Caída De La Ballena</p></div>
+                <div><img src="p10.jfif" alt="El Corazón De La Bestia"><p>El Corazón De La Bestia</p></div>
+                <div><img src="p11.jfif" alt="Hope: El Primer Impacto"><p>Hope: El Primer Impacto</p></div>
+                <div><img src="p12.jfif" alt="Un Mal Partido"><p>Un Mal Partido</p></div>
+            </div>
+        </section>
+
+        <section id="proximamente">
+            <h1>Proximamente</h1>
+            <div class="peliculas">
+                <div><img src="p13.jfif" alt="Película próximamente"><p>Próximamente</p></div>
+                <div><img src="p14.jpg" alt="Película próximamente"><p>Godzilla Minus Zero</p></div>
+                <div><img src="p15.jpg" alt="Película próximamente"><p>HCF: ENHYPEN WORLD TOUR BLOOD</p></div>
+                <div><img src="p16.jpg" alt="Película próximamente"><p>Rammstein - Live inMexico Cit</p></div>
+                <div><img src="p17.jpg" alt="Película próximamente"><p>Duna: Parte Tres</p></div>
+                <div><img src="p18.jpg" alt="Película próximamente"><p>Vértigo 2: Punto Muerto</p></div>
+                <div><img src="p19.jpg" alt="Película próximamente"><p>Shaun, El Cordero: El Monstruo De Mossy...</p></div>
+                <div><img src="p20.jpg" alt="Película próximamente"><p>Volcán: Fuego Bajo Tierra</p></div>
+            </div>
+        </section>
+
+        <section class="registro" id="registro">
+            <h1>Regístrate con tu Club Cinepolis</h1>
+            <form>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" required>
+                <label for="correo">Correo electrónico</label>
+                <input id="correo" name="correo" type="email" required>
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" name="contrasena" type="password" minlength="8" required>
+                <button type="button">Registrarme</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <table width="100%" bgcolor="#06112b" cellpadding="20">
+            <tr>
+                <td align="center">
+                    <font color="white">
+                        <p>Contáctanos: 656 123 4567</p>
+                        <p>Todos los derechos reservados a Cinépolis</p>
+                        <p>Daniel Molina C 5J</p>
+                    </font>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+</html>
