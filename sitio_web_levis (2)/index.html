@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Levi's - Tienda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #c41230;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            background-color: #1d2939;
+            text-align: center;
+            padding: 12px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .seccion {
+            background-color: white;
+            width: 90%;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #cccccc;
+        }
+        h2 {
+            color: #c41230;
+            border-bottom: 2px solid #c41230;
+        }
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        td {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            width: 33%;
+        }
+        .boton {
+            background-color: #c41230;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        input {
+            padding: 6px;
+            margin: 5px 0;
+            width: 90%;
+        }
+        footer {
+            background-color: #1d2939;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #ffccd5;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <h1>LEVI'S</h1>
+        <p>
+            <a href="#login" class="boton">Iniciar Sesión</a>
+            <a href="#registro" class="boton">Registro</a>
+            <a href="#carrito" class="boton">Carrito (0)</a>
+        </p>
+    </header>
+
+    <nav>
+        <a href="#mujer">Mujer</a>
+        <a href="#hombre">Hombre</a>
+        <a href="#kids">Kids</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#rebajas">Rebajas</a>
+    </nav>
+
+    <div class="seccion" style="text-align: center;">
+        <h2>Bienvenido a Levi's</h2>
+        <img src="banner.jpg" alt="Imagen Levis" width="700">
+        <p>Visita la página oficial aquí: <a href="https://www.levi.com.mx" target="_blank">https://www.levi.com.mx</a></p>
+    </div>
+
+    <div class="seccion" id="mujer">
+        <h2>Mujer</h2>
+        <table>
+            <tr>
+                <td>
+                    <img src="mujer1.jpg" alt="Jeans Mujer" width="220">
+                    <h3>Jeans 501 Mujer</h3>
+                    <p>$1,499 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="mujer2.jpg" alt="Chamarra Mujer" width="220">
+                    <h3>Chamarra Mezclilla</h3>
+                    <p>$1,799 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="mujer3.jpg" alt="Playera Mujer" width="220">
+                    <h3>Playera Clásica</h3>
+                    <p>$549 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="seccion" id="hombre">
+        <h2>Hombre</h2>
+        <table>
+            <tr>
+                <td>
+                    <img src="hombre1.jpg" alt="Jeans Hombre" width="220">
+                    <h3>Jeans 501 Hombre</h3>
+                    <p>$1,599 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="hombre2.jpg" alt="Jeans 511" width="220">
+                    <h3>Jeans 511 Slim</h3>
+                    <p>$1,499 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="hombre3.jpg" alt="Camisa Hombre" width="220">
+                    <h3>Camisa Vaquera</h3>
+                    <p>$1,299 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="seccion" id="kids">
+        <h2>Kids</h2>
+        <table>
+            <tr>
+                <td>
+                    <img src="kids1.jpg" alt="Jeans Niño" width="220">
+                    <h3>Jeans Niño</h3>
+                    <p>$899 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="kids2.jpg" alt="Overol Niña" width="220">
+                    <h3>Overol Niña</h3>
+                    <p>$999 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="kids3.jpg" alt="Sudadera Kids" width="220">
+                    <h3>Sudadera Kids</h3>
+                    <p>$799 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="seccion" id="colecciones">
+        <h2>Colecciones</h2>
+        <table>
+            <tr>
+                <td>
+                    <img src="col1.jpg" alt="Vintage" width="220">
+                    <h3>Colección Vintage</h3>
+                    <p>$3,299 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="col2.jpg" alt="Edición Especial" width="220">
+                    <h3>Mezclilla Japonesa</h3>
+                    <p>$3,899 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="col3.jpg" alt="SilverTab" width="220">
+                    <h3>Colección 90s</h3>
+                    <p>$1,899 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="seccion" id="rebajas">
+        <h2>Rebajas</h2>
+        <table>
+            <tr>
+                <td>
+                    <img src="reb1.jpg" alt="Rebaja Jeans" width="220">
+                    <h3>Jeans 505</h3>
+                    <p>Antes $1,499 - Ahora $1,049 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="reb2.jpg" alt="Rebaja Chamarra" width="220">
+                    <h3>Chamarra Borrega</h3>
+                    <p>Antes $2,399 - Ahora $1,799 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+                <td>
+                    <img src="reb3.jpg" alt="Rebaja Playera" width="220">
+                    <h3>Playera Retro</h3>
+                    <p>Antes $599 - Ahora $359 MXN</p>
+                    <a href="#carrito" class="boton">Agregar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="seccion">
+        <h2>Cuenta y Carrito</h2>
+        <table>
+            <tr>
+                <td id="login">
+                    <h3>Iniciar Sesión</h3>
+                    <form action="#inicio">
+                        <label>Correo:</label><br>
+                        <input type="email" name="correo" placeholder="Escribe tu correo" required><br>
+                        <label>Contraseña:</label><br>
+                        <input type="password" name="clave" placeholder="Escribe tu contraseña" required><br><br>
+                        <input type="submit" value="Entrar" class="boton">
+                    </form>
+                </td>
+
+                <td id="registro">
+                    <h3>Registro (Solo vista)</h3>
+                    <form>
+                        <label>Nombre:</label><br>
+                        <input type="text" placeholder="No disponible" disabled><br>
+                        <label>Correo:</label><br>
+                        <input type="email" placeholder="No disponible" disabled><br><br>
+                        <input type="button" value="Registrarse" disabled>
+                    </form>
+                </td>
+
+                <td id="carrito">
+                    <h3>Carrito (Solo vista)</h3>
+                    <p>Productos agregados: 0</p>
+                    <p>Total: $0.00 MXN</p>
+                    <button disabled>Pagar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <p>Alumno Daniel Molina Contreras numero de control 0874</p>
+        <p><a href="#inicio">Subir al inicio</a></p>
+    </footer>
+
+</body>
+</html>
